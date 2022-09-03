@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Projeto Traveller</title>
+</head>
+
+<body>
+    <header class="menu-principal">
+        <div class="header-1">
+            <div class="logo">
+                <img src="./images/logo.png" alt="Logotipo Gulliver Traveller">
+            </div>
+            <nav class="nav-list">
+                <ul>
+                    <li>
+                        <a href="#">Início</a>
+                    </li>
+                    <li>
+                        <a href="#">Sobre nós</a>
+                    </li>
+                    <li>
+                        <a href="#" class="selected-nav">Pontos Turísticos</a>
+                    </li>
+                    <li>
+                        <a href="#">Entrar</a>
+                    </li>
+                    <li>
+                        <a href="#" class="login-nav">Cadastre-se</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-2">
+            <div class="textos-header">
+                <h1>Compartilhe momentos, experiências e histórias</h1>
+                <p>
+                    Conte-nos sobre um lugar que foi marcante para
+                    que mais viajantes possam ter essa experiência.
+                </p>
+            </div>
+        </div>
+    </header>
+    <main class="content">
+        <h2>Cadastro de Ponto Turístico</h2>
+        <form action="." name="dados" method="get">
+            <fieldset class="info-local">
+                <div class="campos">
+                    <label for="nome">Nome do Local:</label>
+                </div>
+                <div class="campos">
+                    <input type="text" id="nome" placeholder="ex: Museu de Arte" autofocus required>
+                </div>
+                <div>
+                    <label for="nome">Selecione o tipo do Local:</label>
+                </div>
+                <div class="campos">
+                    <select name="tipo-local" id="tipo-local">
+                        <option value="0" disabled selected> Selecione uma opção </option>
+                        <option value="1">Acomodação (ex: Hotel, Pousada, Resort)</option>
+                        <option value="2">Atração Cultural (ex: Museu, Galeria de Arte, Edifícios)</option>
+                        <option value="3">Atração Natural (ex: Praia, Parque, Montanha)</option>
+                        <option value="4">Gastronômico</option>
+                        <option value="5">Outros</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <h3>Localização</h3>
+                <div class="campos">
+                    <div class="inline">
+                        <label for="cep">CEP</label>
+                        <label for="rua">Rua</label>
+                        <label for="numero">Número</label>
+                        
+                    </div>
+                    <div class="inline">
+                        <input type="text" name="cep" id="cep" size="10" maxlength="9" onblur="pesquisacep(this.value);" required placeholder="ex: 12345-678">
+                        <input type="text" name="rua" id="rua" size="60" required placeholder="ex: Av. Paulista">
+                        <input type="text" name="numero" id="numero" required placeholder="ex: 1234">
+                    </div>
+                </div>
+                <div class="campos">
+                    <div class="inline">
+                        <label for="bairro">Bairro</label>
+                        <label for="cidade">Cidade</label>
+                        <label for="uf">Estado</label>
+                    </div>
+                    <div class="inline">
+                        <input type="text" name="bairro" id="bairro" size="40" required placeholder="ex: Bela Vista">
+                        <input type="text" name="cidade" id="cidade" size="40" required placeholder="ex: São Paulo">
+                        <input type="text" name="uf" id="uf" size="2" required placeholder="ex: SP">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <h3>Contato:</h3>
+                <div class="campos">
+                    <div class="inline">
+                        <label for="telefone">Telefone</label>
+                        <label for="email">Email</label>
+                        <label for="site">Website</label>
+                    </div>
+                    <div class="inline">
+                        <input type="tel" id="telefone" required placeholder="ex: 00-1234-5678">
+                        <input type="email" id="email" required placeholder="ex: local@email.com">
+                        <input type="url" id="site" placeholder="ex: www.local.com">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <h3>Outras informações:</h3>
+                <p><strong>Horário de Funcionamento:</strong></p>
+                <div class="campos">
+                    <label for="dia">Dias da Semana</label>
+                </div>
+                <div class="campos">
+                    <input list="semana" required placeholder="Dia da semana"> à
+                    <input list="semana" required placeholder="Dia da semana">
+                    <datalist id="semana">
+                        <option value="Domingo"></option>
+                        <option value="Segunda-feira"></option>
+                        <option value="Terça-feira"></option>
+                        <option value="Quarta-feira"></option>
+                        <option value="Quinta-feira"></option>
+                        <option value="Sexta-feira"></option>
+                        <option value="Sábado"></option>
+                    </datalist>
+                </div>
+                <div class="campos">
+                    <label for="horario">Horário</label>
+                </div>
+                <div>
+                    <input type="time"> às <input type="time">
+                </div>
+                <hr>
+                <div class="campos">
+                    <div class="inline-2">
+                        <label for="valor">Valor da Entrada</label>
+                        <label for="epoca">Melhor época para visitação:</label>
+                    </div>
+                </div>
+                <div class="campos">
+                    <div class="inline-2">
+                        <input type="number" id="valor" required placeholder="ex: 200,00">
+                        <input type="text" id="epoca" placeholder="ex: Inverno">
+                    </div>
+                </div>
+                <div class="campos">
+                    <p><strong>Informações sobre o local:</strong></p>
+                    <div class="check">
+                        <input type="checkbox" name="infos-1" id="infos-1" value="criancas">
+                        <label for="infos-1">Permitido crianças</label>
+                        <input type="checkbox" name="infos-2" id="infos-2" value="animais">
+                        <label for="infos-2">Permitido animais</label>
+                        <input type="checkbox" name="infos-3" id="infos-3" value="pcds">
+                        <label for="infos-3">Acessibilidade para PCD's</label>
+                        <input type="checkbox" name="infos-4" id="infos-4" value="estacionamento">
+                        <label for="infos-4">Estacionamento disponível</label>
+                    </div>
+                    <div class="campos">
+                        <label for="avaliacao" class="avaliacao">O que você achou desse Ponto Turístico?</label>
+                    </div>
+                    <div class="campos">
+                        <div class="inline avaliacao">
+                            <input type="radio" name="avaliacao" class="radio" id="avaliacao1" value="ótimo" checked>
+                            <label for="avaliacao1">Incrível!</label>
+                            <input type="radio" name="avaliacao" class="radio" id="avaliacao2" value="bom">
+                            <label for="avaliacao2">Legal.</label>
+                            <input type="radio" name="avaliacao" class="radio" id="avaliacao3" value="ruim">
+                            <label for="avaliacao3">Ruim...</label>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="campos">
+                        <label for="infos">Descrição do Ponto Turístico</label>
+                        <textarea name="" id="infos"
+                            placeholder="Descreva sua experiência, como é o clima do local, indicações de serviços e o que mais achar importante!"></textarea>
+                    </div>
+            </fieldset>
+            <div class="botoes">
+                <button class="botao" onclick="msg()">
+                    <p>Cadastrar</p>
+                </button>
+            </div>
+        </form>
+    </main>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
