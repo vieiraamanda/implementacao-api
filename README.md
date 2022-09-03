@@ -1,2 +1,2 @@
 A área escolhida do Projeto Gulliver Traveller foi o formulário de Cadastro de Ponto Turístico. Esta foi a primeira atividade do projeto, desenvolvida na Fase 1, e, agora, otimizada com uma API.
-A API utilizada foi o ViaCep, um WebService que serve para Consultar CEP de endereçamento do Brasil gratuitamente. Para consultar o CEP, é feito requisição http para a API do ViaCep e, então, obtemos o retorno com as informações: rua, bairro, cidade e UF.
+A API utilizada foi o ViaCep, um WebService que serve para Consultar CEP de endereçamento do Brasil gratuitamente. Para consultar o CEP, é feito uma requisição http para a API do ViaCep e, então, obtemos o retorno com as informações: rua, bairro, cidade e UF.
